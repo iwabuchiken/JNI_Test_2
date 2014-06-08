@@ -4,6 +4,9 @@
 java com.example.jni.JNITest
 java -Djava.library.path=../resources com.example.jni.JNITest
 
+xcopy "${BuildArtifactFilePrefix}${BuildArtifactFileName}" "${workspace_loc:/JNI_Test/resources/}" /Y
+xcopy "${BuildArtifactFilePrefix}${BuildArtifactFileName}" "${workspace_loc:/JNI_Test/resources/hello.dll}" /Y
+
 ------------------------
 
 	Build steps
@@ -13,3 +16,18 @@ C++		Build
 copy	to: <Java project folder>/resources
 rename	to: "hello"		from: "...."
 run		Java project
+
+------------------------
+
+	Git
+
+------------------------
+git init && git add . && gitk
+
+m
+
+v-1.0
+---
+Initial
+
+g p origin master
